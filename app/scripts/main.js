@@ -18,6 +18,11 @@ App = {
   },
   build: function (data, tabletop) {
     console.log(data);
+    var source = $('#template').html(),
+        template = Handlebars.compile(source);
+    $.each(data, function (index, obj) {
+      $('.container').append(template(obj))
+    })
   }
 }
 
